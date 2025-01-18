@@ -1,0 +1,23 @@
+Given the head of a linked list, the task is to reverse this list and return the reversed head.
+Examples:
+Input: head: 1 -> 2 -> 3 -> 4 -> NULL
+Output: head: 4 -> 3 -> 2 -> 1 -> NULL
+
+Solution:
+Node* reverseList(struct Node* head) {
+        // code here
+        vector<int>ans;
+struct Node *temp = head;
+while(temp!= NULL) {
+      ans.push_back(temp->data);
+      temp = temp->next;
+}
+int i = ans.size()-1;
+temp = head;
+while(temp) {
+    temp->data = ans[i];
+    i--;
+    temp = temp->next;
+}
+return head;
+}
